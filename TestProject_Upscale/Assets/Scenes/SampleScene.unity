@@ -746,7 +746,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: menuController, Assembly-CSharp
-        m_MethodName: playGame
+        m_MethodName: menuGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -804,7 +804,7 @@ Animator:
   m_GameObject: {fileID: 1549106969}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 47ba598b88b542d46a07df1b0e20c51d, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea36a73055947a74da98e38b3c770ef4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
