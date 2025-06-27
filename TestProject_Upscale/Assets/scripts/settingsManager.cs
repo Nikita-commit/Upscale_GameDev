@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public class settingsManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class settingsManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sliderText = null;
     [SerializeField] private float maxSliderAmount = 100.0f;
     [SerializeField] private AudioMixer myAudioMixer;
+ 
+    public Selectable easyElement;
+    public Selectable middleElement;
+    public Selectable hardElement;
 
     private void Start()
     {
@@ -65,6 +70,10 @@ public class settingsManager : MonoBehaviour
         currentDifficulty = Difficulty.Easy;
         Debug.Log("Difficulty: Easy");
         PlayerPrefs.SetInt("Difficulty", 0);
+        if (hardElement != null)
+        {
+            easyElement.Select();
+        }
     }
 
     public void SetMiddle()
@@ -72,6 +81,10 @@ public class settingsManager : MonoBehaviour
         currentDifficulty = Difficulty.Middle;
         Debug.Log("Difficulty: Middle");
         PlayerPrefs.SetInt("Difficulty", 1);
+        if (easyElement != null)
+        {
+            middleElement.Select();
+        }
     }
 
     public void SetHard()
@@ -79,6 +92,10 @@ public class settingsManager : MonoBehaviour
         currentDifficulty = Difficulty.Hard;
         Debug.Log("Difficulty: Hard");
         PlayerPrefs.SetInt("Difficulty", 2);
+        if (middleElement != null)
+        {
+            hardElement.Select();
+        }
     }
 
     private void ToggleChangedNot(bool isOn)
